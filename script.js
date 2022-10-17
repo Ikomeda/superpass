@@ -1,5 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var copyBtn = document.querySelector("#copy")
 var numbers = '1234567890';
 var uppers = 'QWERTYUIOPASDFGHJKLZXCVBNM';
 var lowers = 'qwertyuiopasdfghjklzxcvbnm';
@@ -35,9 +36,16 @@ function generatePassword() {
   
   for (var i = 0; i < passwordLength; i++) {
     password = password + charactersToUse.charAt(Math.floor(Math.random() * charactersToUse.length));
-    console.log(charactersToUse.length)
-    console.log(password)
+
     
   }
   return password;
+  
+}
+  copyEl.addEventListener("click", copyPassword());
+function copyPassword() {
+  var copyText = document.getElementById("password");
+  console.log(copyText)
+  copyText.select();
+  document.execCommand("copy");
 }
