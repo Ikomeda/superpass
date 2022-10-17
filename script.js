@@ -10,8 +10,9 @@ var charactersToUse = "";
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  var finishedPassword = generatePassword();
   var passwordText = document.querySelector("#password");
+  passwordText.value = finishedPassword
   
 };
 generateBtn.addEventListener("click", writePassword);
@@ -32,8 +33,11 @@ function generatePassword() {
   var useSymbols = window.confirm("Do you want your password to include Symbols?")
   if (useSymbols) {charactersToUse = charactersToUse + symbols};
   
-  for (var i = 0; i <= passwordLength; i++) {
-    var password = Math.floor(Math.random() * charactersToUse.length);
+  for (var i = 0; i < passwordLength; i++) {
+    password = password + charactersToUse.charAt(Math.floor(Math.random() * charactersToUse.length));
+    console.log(charactersToUse.length)
+    console.log(password)
     
   }
+  return password;
 }
