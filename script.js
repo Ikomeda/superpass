@@ -42,10 +42,5 @@ function generatePassword() {
   return password;
   
 }
-  copyEl.addEventListener("click", copyPassword());
-function copyPassword() {
-  var copyText = document.getElementById("password");
-  console.log(copyText)
-  copyText.select();
-  document.execCommand("copy");
-}
+
+
